@@ -6,6 +6,8 @@ import { AppComponent }  from './app.component';
 import {CajaComponent } from './ejemplos/caja.component';
 import {EjemplosBindingComponent } from './ejemplos/ejemplos-binding.component';
 import {EjemplosComponentesComponent } from './ejemplos/ejemplos-componentes.component';
+import { listaContactosComponent } from './lista-contactos/lista-contactos.component';
+
 
 interface Coche {
   ruedas: number;
@@ -20,7 +22,8 @@ interface Coche {
     AppComponent,
     CajaComponent,
     EjemplosBindingComponent,
-    EjemplosComponentesComponent
+    EjemplosComponentesComponent,
+    listaContactosComponent
      ],
   providers: [ // metemos los servicios
 
