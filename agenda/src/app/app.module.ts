@@ -7,6 +7,8 @@ import {CajaComponent } from './ejemplos/caja.component';
 import {EjemplosBindingComponent } from './ejemplos/ejemplos-binding.component';
 import {EjemplosComponentesComponent } from './ejemplos/ejemplos-componentes.component';
 import { listaContactosComponent } from './lista-contactos/lista-contactos.component';
+import { ContactoService } from './servicios/contactos.service';
+import { DetallesContactoComponent } from './detalles-contacto/detalles-contacto.component';
 
 
 interface Coche {
@@ -23,10 +25,11 @@ interface Coche {
     CajaComponent,
     EjemplosBindingComponent,
     EjemplosComponentesComponent,
-    listaContactosComponent
+    listaContactosComponent,
+    DetallesContactoComponent
      ],
   providers: [ // metemos los servicios
-
+    ContactoService
   ],
   bootstrap:    [ AppComponent ] //componente raiz de nyestra app
 })

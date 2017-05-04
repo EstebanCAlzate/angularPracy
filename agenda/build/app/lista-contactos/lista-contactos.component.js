@@ -11,17 +11,26 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require("@angular/core");
 var listaContactosComponent = (function () {
     function listaContactosComponent() {
+        this.seleccionado = new core_1.EventEmitter();
     }
+    listaContactosComponent.prototype.notificarContactoSeleccionado = function (contacto) {
+        this.seleccionado.emit(contacto);
+    };
     return listaContactosComponent;
 }());
 __decorate([
     core_1.Input(),
     __metadata("design:type", Array)
 ], listaContactosComponent.prototype, "contactos", void 0);
+__decorate([
+    core_1.Output(),
+    __metadata("design:type", core_1.EventEmitter)
+], listaContactosComponent.prototype, "seleccionado", void 0);
 listaContactosComponent = __decorate([
     core_1.Component({
         selector: 'lista-contactos',
-        templateUrl: '/app/lista-contactos/lista-contactos.component.html'
+        templateUrl: '/app/lista-contactos/lista-contactos.component.html',
+        styleUrls: ['app/lista-contactos/lista-contactos.component.css']
     })
 ], listaContactosComponent);
 exports.listaContactosComponent = listaContactosComponent;
