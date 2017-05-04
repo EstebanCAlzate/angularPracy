@@ -3,7 +3,9 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 
 import { AppComponent }  from './app.component';
-import {CajaComponent } from './caja.component';
+import {CajaComponent } from './ejemplos/caja.component';
+import {EjemplosBindingComponent } from './ejemplos/ejemplos-binding.component';
+import {EjemplosComponentesComponent } from './ejemplos/ejemplos-componentes.component';
 
 interface Coche {
   ruedas: number;
@@ -16,7 +18,9 @@ interface Coche {
     ], 
   declarations: [  //toos los componentes, directivas y pipes  que necesita
     AppComponent,
-    CajaComponent
+    CajaComponent,
+    EjemplosBindingComponent,
+    EjemplosComponentesComponent
      ],
   providers: [ // metemos los servicios
 
