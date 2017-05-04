@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 
 import { AppComponent }  from './app.component';
+import {CajaComponent } from './caja.component';
 
 interface Coche {
   ruedas: number;
@@ -14,7 +15,8 @@ interface Coche {
     FormsModule
     ], 
   declarations: [  //toos los componentes, directivas y pipes  que necesita
-    AppComponent
+    AppComponent,
+    CajaComponent
      ],
   providers: [ // metemos los servicios
 

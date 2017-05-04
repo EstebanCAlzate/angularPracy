@@ -2,16 +2,7 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'my-app',
-  template: `<h1>Hello {{alumnos}}</h1>
-            <h2> y el numero de la suerte es : {{numSuerte}} </h2>
-            <textarea [rows]='textAreaLineas'></textarea>
-            <div [class.caja]='pintamosClase'></div>
-            <p [style.color]='obtenerColor()'> parrafo con color</p>
-            <p [ngStyle]='obtenerStilos()'>parrafo con stilo</p>
-            <button (click)='mostrar()' >mostrar mensaje</button>
-            <input [(ngModel)]='mensaje' type='text'/>
-            {{mensaje}}
-            `,
+  templateUrl:'/app/app.component.html',
   styles: [`
           .caja {
             width: 50px;
@@ -58,5 +49,9 @@ export class AppComponent  {
   //bindign biridecional
 
   mensaje: string = 'cambiame'
+
+  escribeMensaje(mensaje: string){
+    console.log(mensaje);
+  }
  }
  

@@ -38,12 +38,15 @@ var AppComponent = (function () {
     AppComponent.prototype.mostrar = function () {
         alert('Hola señores');
     };
+    AppComponent.prototype.escribeMensaje = function (mensaje) {
+        console.log(mensaje);
+    };
     return AppComponent;
 }());
 AppComponent = __decorate([
     core_1.Component({
         selector: 'my-app',
-        template: "<h1>Hello {{alumnos}}</h1>\n            <h2> y el numero de la suerte es : {{numSuerte}} </h2>\n            <textarea [rows]='textAreaLineas'></textarea>\n            <div [class.caja]='pintamosClase'></div>\n            <p [style.color]='obtenerColor()'> parrafo con color</p>\n            <p [ngStyle]='obtenerStilos()'>parrafo con stilo</p>\n            <button (click)='mostrar()' >mostrar mensaje</button>\n            <input [(ngModel)]='mensaje' type='text'/>\n            {{mensaje}}\n            ",
+        templateUrl: './app.component.html',
         styles: ["\n          .caja {\n            width: 50px;\n            height: 50px;\n            background-color: red;\n          }\n  "]
     })
 ], AppComponent);
