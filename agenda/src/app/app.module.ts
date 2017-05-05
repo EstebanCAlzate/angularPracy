@@ -10,6 +10,7 @@ import { listaContactosComponent } from './lista-contactos/lista-contactos.compo
 import { ContactoService } from './servicios/contactos.service';
 import { DetallesContactoComponent } from './detalles-contacto/detalles-contacto.component';
 import { EjemplosInyeccionComponent, Servicio1, Servicio2, Servicio2Provider } from './ejemplos/ejemplos-inyeccion.component';
+import { FormularioContactComponent } from './formulario-contacto/formulario-contacto.component';
 
 
 interface Coche {
@@ -28,7 +29,8 @@ interface Coche {
     EjemplosComponentesComponent,
     listaContactosComponent,
     DetallesContactoComponent,
-    EjemplosInyeccionComponent
+    EjemplosInyeccionComponent,
+    FormularioContactComponent
      ],
   providers: [ // metemos los servicios
     ContactoService,
