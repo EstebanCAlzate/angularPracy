@@ -2,8 +2,8 @@
 <ejemplos-binding></ejemplos-binding>
 <ejemplos-componentes></ejemplos-componentes>
 -->
-
-<ejemplos-inyeccion></ejemplos-inyeccion>
+<!-- cuando el formulario llega lo ahce -->
+<ejemplos-inyeccion (formularioAceptado)="guardarContacto($event)"></ejemplos-inyeccion>
 
 <div class="container">
     <!-- Titulo -->
@@ -13,7 +13,7 @@
         </h1>
     </header>
 
-    <formulario-contacto></formulario-contacto>
+    <formulario-contacto (formularioAceptado)="formularioContacto($event)"></formulario-contacto>
 
     <!--  Coleccion de contactos-->
     <lista-contactos [contactos]="listaContactos" (seleccionado)="mostrarDetalles($event)"></lista-contactos>

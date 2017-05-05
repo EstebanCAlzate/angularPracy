@@ -1,6 +1,7 @@
 import { NgModule }      from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
+import { HttpModule } from '@angular/http';
 
 import { AppComponent }  from './app.component';
 import {CajaComponent } from './ejemplos/caja.component';
@@ -20,7 +21,8 @@ interface Coche {
 @NgModule({ 
   imports:[  //tdos los modulos que necesita mi app 
     BrowserModule,
-    FormsModule
+    FormsModule,
+    HttpModule
     ], 
   declarations: [  //toos los componentes, directivas y pipes  que necesita
     AppComponent,

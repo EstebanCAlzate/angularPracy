@@ -1,23 +1,21 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { FormGroup } from '@angular/forms';
+import { Contacto } from '../entidades/contacto';
 
 @Component({
     selector: 'formulario-contacto',
     templateUrl: '/app/formulario-contacto/formulario-contacto.component.html',
-    styles:[`
-        button:disabled {
-            background-color: #EE82EE;
-            border: 1px solid purple;
-        }
-        input:focus{
-            border: 1px solid #EE82EE;
-        }
-    `]
+    styleUrls: [ 'app/formulario-contacto/formulario-contacto.component.css']
 })
 
 export class FormularioContactComponent   {
 
+    @Output() formularioAceptado: EventEmitter<Contacto> = new EventEmitter();
+
     guardarContacto(contactoForm:FormGroup){
-        console.log(contactoForm);
+        // console.log(contactoForm);
+        const contacto:Contacto = Contacto.desdeJSON(contactoForm.value);
+        this.formularioAceptado.emit(contacto);
+
     }    
 }

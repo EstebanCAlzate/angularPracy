@@ -15,7 +15,11 @@ var AppComponent = (function () {
         this._contactosService = _contactosService;
     } //con esto ya podemos acceder a los servicios
     AppComponent.prototype.ngOnInit = function () {
-        this.listaContactos = this._contactosService.ObtenerContactos();
+        var _this = this;
+        this._contactosService.ObtenerContactos()
+            .subscribe(function (contactos) {
+            _this.listaContactos = contactos;
+        });
     };
     AppComponent.prototype.mostrarDetalles = function (contacto) {
         this.contactoSeleccionado = contacto;
@@ -23,6 +27,10 @@ var AppComponent = (function () {
     AppComponent.prototype.navegarRuta = function (ruta) {
         console.log('navegar ', ruta);
         window.open(ruta, '_blank');
+    };
+    AppComponent.prototype.guardarContacto = function (contacto) {
+        this._contactosService.guardarContacto(contacto)
+            .subscribe(function (contacto) { });
     };
     return AppComponent;
 }());
