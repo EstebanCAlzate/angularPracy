@@ -13,8 +13,8 @@
         </h1>
     </header>
 
-    <formulario-contacto (formularioAceptado)="formularioContacto($event)"></formulario-contacto>
-
+    <formulario-contacto (formularioAceptado)="guardarContacto($event)"></formulario-contacto>
+<!-- revisar-->
     <!--  Coleccion de contactos-->
     <lista-contactos [contactos]="listaContactos" (seleccionado)="mostrarDetalles($event)"></lista-contactos>
 

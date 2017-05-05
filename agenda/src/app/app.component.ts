@@ -34,5 +34,6 @@ export class AppComponent implements OnInit {
    guardarContacto(contacto: Contacto) {
     this._contactosService.guardarContacto(contacto)
                           .subscribe(contacto =>{});
+    console.log('guardar');
   }
 }

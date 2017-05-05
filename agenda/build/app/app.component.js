@@ -31,6 +31,7 @@ var AppComponent = (function () {
     AppComponent.prototype.guardarContacto = function (contacto) {
         this._contactosService.guardarContacto(contacto)
             .subscribe(function (contacto) { });
+        console.log('guardar');
     };
     return AppComponent;
 }());
