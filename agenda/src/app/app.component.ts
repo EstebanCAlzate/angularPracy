@@ -1,4 +1,4 @@
-import { Component, OnInit, Injectable } from '@angular/core';
+import { Component, OnInit, Injectable, EventEmitter } from '@angular/core';
 import { Contacto } from './entidades/contacto';
 import { ContactoService } from './servicios/contactos.service';
 
@@ -21,5 +21,10 @@ export class AppComponent implements OnInit {
 
   mostrarDetalles(contacto:Contacto):void{
     this.contactoSeleccionado = contacto;
+  }
+
+  navegarRuta(ruta: string){
+    console.log('navegar ',ruta);
+    window.open(ruta, '_blank');
   }
 }

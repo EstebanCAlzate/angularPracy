@@ -12,17 +12,34 @@ var core_1 = require("@angular/core");
 var contacto_1 = require("../entidades/contacto");
 var DetallesContactoComponent = (function () {
     function DetallesContactoComponent() {
+        this.verFb = new core_1.EventEmitter();
+        this.verTw = new core_1.EventEmitter();
     }
+    DetallesContactoComponent.prototype.notificarFb = function () {
+        this.verFb.emit(this.contacto.generarRutaFb());
+    };
+    DetallesContactoComponent.prototype.notificarTw = function () {
+        this.verTw.emit(this.contacto.generarRutaTw());
+    };
     return DetallesContactoComponent;
 }());
 __decorate([
     core_1.Input(),
     __metadata("design:type", contacto_1.Contacto)
 ], DetallesContactoComponent.prototype, "contacto", void 0);
+__decorate([
+    core_1.Output(),
+    __metadata("design:type", core_1.EventEmitter)
+], DetallesContactoComponent.prototype, "verFb", void 0);
+__decorate([
+    core_1.Output(),
+    __metadata("design:type", core_1.EventEmitter)
+], DetallesContactoComponent.prototype, "verTw", void 0);
 DetallesContactoComponent = __decorate([
     core_1.Component({
         selector: 'detalles-contacto',
-        templateUrl: '/app/detalles-contacto/detalles-contacto.component.html'
+        templateUrl: '/app/detalles-contacto/detalles-contacto.component.html',
+        styleUrls: ['app/detalles-contacto/detalles-contacto.component.css']
     })
 ], DetallesContactoComponent);
 exports.DetallesContactoComponent = DetallesContactoComponent;

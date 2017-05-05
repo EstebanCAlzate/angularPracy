@@ -16,5 +16,9 @@
     <lista-contactos [contactos]="listaContactos" (seleccionado)="mostrarDetalles($event)"></lista-contactos>
 
     <!-- Detalles de contacto -->
-    <detalles-contacto [contacto]="contactoSeleccionado"></detalles-contacto>
+    <detalles-contacto 
+    [contacto]="contactoSeleccionado"
+    (verFb)="navegarRuta($event)"
+    (verTw)="navegarRuta($event)"
+    ></detalles-contacto>
 </div>

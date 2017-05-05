@@ -1,0 +1,10 @@
+button{
+    font-size: 32px;
+    padding: 25px;
+    margin: 0;
+    border: 0;
+}
+
+button:hover{
+    color: purple;
+}
