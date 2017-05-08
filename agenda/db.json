@@ -17,6 +17,34 @@
       "twitter": "emiliaclarke",
       "facebook": "EmiliaTargaryenClarke",
       "id": 2
+    },
+    {
+      "nombre": "Jon",
+      "apellidos": "Nieve",
+      "email": "",
+      "telefono": "",
+      "twitter": "",
+      "facebook": "",
+      "id": 3
+    },
+    {
+      "nombre": "Zion",
+      "apellidos": "Greyjoy",
+      "email": "zyongrey@islas.ih",
+      "telefono": "532532",
+      "twitter": "@zyon",
+      "facebook": "zyongreyjoy",
+      "id": 4
+    },
+    {
+      "nombre": "Javier",
+      "apellidos": "lopez",
+      "email": "javer@lopex.es",
+      "telefono": "534534",
+      "twitter": "@javerLop",
+      "facebook": "JavierLopez",
+      "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/trubeatto/128.jpg\n",
+      "id": 5
     }
   ]
 }

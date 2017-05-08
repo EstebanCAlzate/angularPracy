@@ -10,14 +10,14 @@ export class ContactoService {
 
     constructor(
         private _http: Http,
-        @Inject(Direcciones) private _direcciones: string ) { }
+        @Inject(Direcciones) private _direcciones: any ) { }
 
     // hacemos un array de llamadas al metodo de crear contactos
     obtenerContactos(): Observable<Contacto[]> {
         // return this._contactos;
         //lo cambiamos por una peticion http
         return this._http
-            .get(`${this._direcciones}/contactos`)
+            .get(`${this._direcciones.servidor}/contactos`)
             .map(res => {
                 const lista: any[] = res.json();
                 //este map es el de recorrer y hacer cosas con cada elemento
@@ -31,14 +31,14 @@ export class ContactoService {
     //creamos un contacto en el servidor.
     guardarContacto(contacto: Contacto): Observable<Contacto> {
         return this._http
-            .post(`${this._direcciones}/contactos`, contacto)
+            .post(`${this._direcciones.servidor}/contactos`, contacto)
             .map(res => Contacto.desdeJSON(res.json()));
     }
 
     //eliminamos un contacto del servidor
     eliminarContacto(contacto: Contacto): Observable<Contacto> {
         return this._http
-            .delete(`${this._direcciones}/contactos/contactos/${contacto.id}`)
+            .delete(`${this._direcciones.servidor}/contactos/contactos/${contacto.id}`)
             .map(res => Contacto.desdeJSON(res.json()));
             //lo que responda el servidor lo convertimos en tipo contacto
     }
@@ -46,7 +46,17 @@ export class ContactoService {
     //actualizamos un contacto en el servidor
     editarContacto(contacto: Contacto): Observable<Contacto>{
         return this._http
-            .put(`${this._direcciones}/contactos/contactos/${contacto.id}`, contacto)
+            .put(`${this._direcciones.servidor}/contactos/contactos/${contacto.id}`, contacto)
             .map(res => Contacto.desdeJSON(res.json()));
     }
+
+    generarRutaAvatar(): Observable<string>{
+       return this._http
+            .get(this._direcciones.faker)
+            .map(res => {
+                let rutaAvatar = res.text();// quitamos las comillas del string
+                rutaAvatar =  rutaAvatar.replace(new RegExp ('\"','g'), '');
+                return rutaAvatar;
+            })
+    }    
 }

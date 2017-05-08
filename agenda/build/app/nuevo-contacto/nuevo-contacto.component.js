@@ -10,15 +10,20 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require("@angular/core");
 var contactos_service_1 = require("../servicios/contactos.service");
+var router_1 = require("@angular/router");
 var NuevoContactoComponent = (function () {
     //con esto ya podemos acceder a los servicios
-    function NuevoContactoComponent(_contactosService) {
+    function NuevoContactoComponent(_contactosService, _router) {
         this._contactosService = _contactosService;
+        this._router = _router;
     }
     NuevoContactoComponent.prototype.guardarContacto = function (contacto) {
+        var _this = this;
         this._contactosService.guardarContacto(contacto)
             .subscribe(function (contacto) {
-            alert('creado');
+            //navegacion por codigo.
+            _this._router.navigate(['mis-contactos']);
+            // ese mis-contactos lo mira de routing
         });
     };
     return NuevoContactoComponent;
@@ -27,7 +32,8 @@ NuevoContactoComponent = __decorate([
     core_1.Component({
         template: "<formulario-contacto (formularioAceptado)=\"guardarContacto($event)\" >\n                aceptado</formulario-contacto>"
     }),
-    __metadata("design:paramtypes", [contactos_service_1.ContactoService])
+    __metadata("design:paramtypes", [contactos_service_1.ContactoService,
+        router_1.Router])
 ], NuevoContactoComponent);
 exports.NuevoContactoComponent = NuevoContactoComponent;
 //# sourceMappingURL=nuevo-contacto.component.js.map

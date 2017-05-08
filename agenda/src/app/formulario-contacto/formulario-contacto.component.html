@@ -1,5 +1,12 @@
 <form #contactoForm="ngForm" (ngSubmit)="guardarContacto(contactoForm)" novalidate>
     <!--CON LA # CREAMOS COMO UNA VARIABLE PARA PODER UTILIZARLA-->
+
+    <div class="row">
+        <div class="offset-by-three six columns avatar">
+            <img [src]="rutaAvatar" alt="">
+        </div>
+    </div>
+
     <!-- Nombres -->
     <div class="row">
         <div class="offset-by-three six columns">
