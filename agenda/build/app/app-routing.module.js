@@ -9,11 +9,16 @@ var core_1 = require("@angular/core");
 var router_1 = require("@angular/router");
 var nuevo_contacto_component_1 = require("./nuevo-contacto/nuevo-contacto.component");
 var mis_contactos_component_1 = require("./mis-contactos/mis-contactos.component");
+var contactos_resolve_service_1 = require("./servicios/contactos-resolve.service");
 //definimos la coleccion de rutas de nuestra app
 var rutas = [
     {
         path: 'mis-contactos',
-        component: mis_contactos_component_1.MisContactosComponent
+        component: mis_contactos_component_1.MisContactosComponent,
+        //antes de sacar esta pagina, cargamos la lista del servidor
+        resolve: {
+            contactos: contactos_resolve_service_1.ContactosResolve
+        }
     },
     {
         path: 'nuevo-contacto',

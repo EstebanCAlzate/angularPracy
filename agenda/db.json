@@ -8,6 +8,15 @@
       "twitter": "",
       "facebook": "",
       "id": 1
+    },
+    {
+      "nombre": "Dany",
+      "apellidos": "Targaryen",
+      "email": "ejeplo@drag.es",
+      "telefono": "6523875",
+      "twitter": "emiliaclarke",
+      "facebook": "EmiliaTargaryenClarke",
+      "id": 2
     }
   ]
 }

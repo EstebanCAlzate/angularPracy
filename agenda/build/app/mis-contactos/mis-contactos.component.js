@@ -10,15 +10,23 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require("@angular/core");
 var contactos_service_1 = require("../servicios/contactos.service");
+var router_1 = require("@angular/router");
 var MisContactosComponent = (function () {
-    function MisContactosComponent(_contactosService) {
+    //en activateRoute tenemos la lista de contactos que hemos pedido
+    function MisContactosComponent(_contactosService, _activateRoute) {
         this._contactosService = _contactosService;
+        this._activateRoute = _activateRoute;
     }
     MisContactosComponent.prototype.ngOnInit = function () {
         var _this = this;
-        this._contactosService.obtenerContactos()
-            .subscribe(function (contactos) {
-            _this.listaContactos = contactos;
+        //para sacar la lista mendiante peticion
+        // this._contactosService.obtenerContactos()
+        //     .subscribe(contactos => {
+        //         this.listaContactos = contactos;
+        //     });
+        //recorremos lo que nos da la ruta con los contactos y los metemos en listacontactos
+        this._activateRoute.data.forEach(function (data) {
+            _this.listaContactos = data.contactos;
         });
     };
     MisContactosComponent.prototype.mostrarDetalles = function (contacto) {
@@ -34,7 +42,8 @@ MisContactosComponent = __decorate([
     core_1.Component({
         templateUrl: './mis-contactos.component.html'
     }),
-    __metadata("design:paramtypes", [contactos_service_1.ContactoService])
+    __metadata("design:paramtypes", [contactos_service_1.ContactoService,
+        router_1.ActivatedRoute])
 ], MisContactosComponent);
 exports.MisContactosComponent = MisContactosComponent;
 //# sourceMappingURL=mis-contactos.component.js.map

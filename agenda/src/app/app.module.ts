@@ -15,6 +15,7 @@ import { FormularioContactComponent } from './formulario-contacto/formulario-con
 import { AppRoutingModule } from './app-routing.module';
 import { MisContactosComponent } from './mis-contactos/mis-contactos.component';
 import { NuevoContactoComponent } from './nuevo-contacto/nuevo-contacto.component';
+import { ContactosResolve } from './servicios/contactos-resolve.service';
 
 
 interface Coche {
@@ -43,7 +44,8 @@ interface Coche {
   providers: [ // metemos los servicios
     ContactoService,
     Servicio1, //tiene @injectable
-    Servicio2Provider
+    Servicio2Provider,
+    ContactosResolve
   ],
   bootstrap:    [ AppComponent ] //componente raiz de nyestra app
 })
