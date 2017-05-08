@@ -3,7 +3,7 @@
 <ejemplos-componentes></ejemplos-componentes>
 -->
 <!-- cuando el formulario llega lo ahce -->
-<ejemplos-inyeccion (formularioAceptado)="guardarContacto($event)"></ejemplos-inyeccion>
+<!--<ejemplos-inyeccion (formularioAceptado)="guardarContacto($event)"></ejemplos-inyeccion>-->
 
 <div class="container">
     <!-- Titulo -->
@@ -13,15 +13,16 @@
         </h1>
     </header>
 
-    <formulario-contacto (formularioAceptado)="guardarContacto($event)"></formulario-contacto>
-<!-- revisar-->
-    <!--  Coleccion de contactos-->
-    <lista-contactos [contactos]="listaContactos" (seleccionado)="mostrarDetalles($event)"></lista-contactos>
+    <!--Barra de navegacion-->
+    <nav>
+        <ul>
+            <li> <a routerLink="/mis-contactos"
+                    routerLinkActive='seleccionado'>Mis contactos</a></li>
+            <li> <a routerLink="/nuevo-contacto"
+                    routerLinkActive='seleccionado'>Nuevo contacto</a></li>
+        </ul>
+    </nav>
 
-    <!-- Detalles de contacto -->
-    <detalles-contacto 
-    [contacto]="contactoSeleccionado"
-    (verFb)="navegarRuta($event)"
-    (verTw)="navegarRuta($event)"
-    ></detalles-contacto>
+    <!--Zona dinamica de paginas de la app-->
+    <router-outlet></router-outlet>
 </div>

@@ -12,6 +12,9 @@ import { ContactoService } from './servicios/contactos.service';
 import { DetallesContactoComponent } from './detalles-contacto/detalles-contacto.component';
 import { EjemplosInyeccionComponent, Servicio1, Servicio2, Servicio2Provider } from './ejemplos/ejemplos-inyeccion.component';
 import { FormularioContactComponent } from './formulario-contacto/formulario-contacto.component';
+import { AppRoutingModule } from './app-routing.module';
+import { MisContactosComponent } from './mis-contactos/mis-contactos.component';
+import { NuevoContactoComponent } from './nuevo-contacto/nuevo-contacto.component';
 
 
 interface Coche {
@@ -22,7 +25,8 @@ interface Coche {
   imports:[  //tdos los modulos que necesita mi app 
     BrowserModule,
     FormsModule,
-    HttpModule
+    HttpModule,
+    AppRoutingModule
     ], 
   declarations: [  //toos los componentes, directivas y pipes  que necesita
     AppComponent,
@@ -32,7 +36,9 @@ interface Coche {
     listaContactosComponent,
     DetallesContactoComponent,
     EjemplosInyeccionComponent,
-    FormularioContactComponent
+    FormularioContactComponent,
+    MisContactosComponent,
+    NuevoContactoComponent
      ],
   providers: [ // metemos los servicios
     ContactoService,

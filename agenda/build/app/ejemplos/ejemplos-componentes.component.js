@@ -21,7 +21,7 @@ var EjemplosComponentesComponent = (function () {
 EjemplosComponentesComponent = __decorate([
     core_1.Component({
         selector: 'ejemplos-componentes',
-        templateUrl: '/app/ejemplos/ejemplos-componentes.component.html'
+        templateUrl: './ejemplos-componentes.component.html'
     }),
     __metadata("design:paramtypes", [])
 ], EjemplosComponentesComponent);

@@ -15,7 +15,7 @@ var FormularioContactComponent = (function () {
         this.formularioAceptado = new core_1.EventEmitter();
     }
     FormularioContactComponent.prototype.guardarContacto = function (contactoForm) {
-        // console.log(contactoForm);
+        console.log(contactoForm);
         var contacto = contacto_1.Contacto.desdeJSON(contactoForm.value);
         this.formularioAceptado.emit(contacto);
     };
@@ -28,8 +28,8 @@ __decorate([
 FormularioContactComponent = __decorate([
     core_1.Component({
         selector: 'formulario-contacto',
-        templateUrl: '/app/formulario-contacto/formulario-contacto.component.html',
-        styleUrls: ['app/formulario-contacto/formulario-contacto.component.css']
+        templateUrl: './formulario-contacto.component.html',
+        styleUrls: ['./formulario-contacto.component.css']
     })
 ], FormularioContactComponent);
 exports.FormularioContactComponent = FormularioContactComponent;

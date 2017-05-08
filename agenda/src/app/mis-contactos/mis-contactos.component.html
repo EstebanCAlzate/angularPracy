@@ -1,0 +1,15 @@
+<!--  Coleccion de contactos-->
+<div class="row">
+    <div class="six columns">
+        <lista-contactos [contactos]="listaContactos"
+                         (seleccionado)="mostrarDetalles($event)">
+        </lista-contactos>
+    </div>
+    <div class="six columns">
+        <detalles-contacto [contacto]="contactoSeleccionado" 
+                            (verFb)="navegarRuta($event)"
+                            (verTw)="navegarRuta($event)">
+        </detalles-contacto>
+
+    </div>
+</div>

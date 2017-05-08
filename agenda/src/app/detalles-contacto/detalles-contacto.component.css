@@ -8,3 +8,7 @@ button{
 button:hover{
     color: purple;
 }
+
+div {
+    text-align: center;
+}

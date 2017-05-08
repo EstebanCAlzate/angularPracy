@@ -1,3 +1,13 @@
 {
-    "contactos": []
+  "contactos": [
+    {
+      "nombre": "Javier",
+      "apellidos": "Lopex",
+      "email": "",
+      "telefono": "",
+      "twitter": "",
+      "facebook": "",
+      "id": 1
+    }
+  ]
 }
