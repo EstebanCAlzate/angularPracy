@@ -8,20 +8,25 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+var __param = (this && this.__param) || function (paramIndex, decorator) {
+    return function (target, key) { decorator(target, key, paramIndex); }
+};
 var core_1 = require("@angular/core");
 var http_1 = require("@angular/http");
 require("rxjs/add/operator/map"); // añade una funcion map a los observables
 var contacto_1 = require("../entidades/contacto");
+var direcciones_1 = require("../configuracion/direcciones");
 var ContactoService = (function () {
-    function ContactoService(_http) {
+    function ContactoService(_http, _direcciones) {
         this._http = _http;
+        this._direcciones = _direcciones;
     }
     // hacemos un array de llamadas al metodo de crear contactos
     ContactoService.prototype.obtenerContactos = function () {
         // return this._contactos;
         //lo cambiamos por una peticion http
         return this._http
-            .get('http://localhost:3004/contactos')
+            .get(this._direcciones + "/contactos")
             .map(function (res) {
             var lista = res.json();
             //este map es el de recorrer y hacer cosas con cada elemento
@@ -31,16 +36,31 @@ var ContactoService = (function () {
             });
         });
     };
+    //creamos un contacto en el servidor.
     ContactoService.prototype.guardarContacto = function (contacto) {
         return this._http
-            .post('http://localhost:3004/contactos', contacto)
+            .post(this._direcciones + "/contactos", contacto)
+            .map(function (res) { return contacto_1.Contacto.desdeJSON(res.json()); });
+    };
+    //eliminamos un contacto del servidor
+    ContactoService.prototype.eliminarContacto = function (contacto) {
+        return this._http
+            .delete(this._direcciones + "/contactos/contactos/" + contacto.id)
+            .map(function (res) { return contacto_1.Contacto.desdeJSON(res.json()); });
+        //lo que responda el servidor lo convertimos en tipo contacto
+    };
+    //actualizamos un contacto en el servidor
+    ContactoService.prototype.editarContacto = function (contacto) {
+        return this._http
+            .put(this._direcciones + "/contactos/contactos/" + contacto.id, contacto)
             .map(function (res) { return contacto_1.Contacto.desdeJSON(res.json()); });
     };
     return ContactoService;
 }());
 ContactoService = __decorate([
     core_1.Injectable(),
-    __metadata("design:paramtypes", [http_1.Http])
+    __param(1, core_1.Inject(direcciones_1.Direcciones)),
+    __metadata("design:paramtypes", [http_1.Http, String])
 ], ContactoService);
 exports.ContactoService = ContactoService;
 //# sourceMappingURL=contactos.service.js.map
