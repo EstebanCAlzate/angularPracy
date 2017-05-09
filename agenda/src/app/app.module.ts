@@ -18,6 +18,8 @@ import { NuevoContactoComponent } from './nuevo-contacto/nuevo-contacto.componen
 import { ContactosResolve } from './servicios/contactos-resolve.service';
 import { ProveedorDirecciones } from './configuracion/direcciones';
 import { observablesEjemplosComponent, EjemploObservablesWikipeiaComponennt } from './ejemplos/observables-ejemplos.component';
+import { EjemplosPipeComponent } from './ejemplos/ejemplos-pipe.component';
+import { OrdenarPipe } from './pipes/ordenar.pipe';
 
 
 interface Coche {
@@ -44,7 +46,9 @@ interface Coche {
     MisContactosComponent,
     NuevoContactoComponent,
     observablesEjemplosComponent,
-    EjemploObservablesWikipeiaComponennt
+    EjemploObservablesWikipeiaComponennt,
+    EjemplosPipeComponent,
+    OrdenarPipe
      ],
   providers: [ // metemos los servicios
     ContactoService,

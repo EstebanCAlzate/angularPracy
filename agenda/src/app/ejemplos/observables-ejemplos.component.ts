@@ -50,11 +50,12 @@ export class observablesEjemplosComponent  {
 //ejemplo de observables con operadores
 @Component({
     selector: 'ejemplos-observables-wikipedia',
+             //<li *ngFor="let resultado of resultados ">
     template: `
         <div>
         <input (input)="buscarWikipedia($event)"/>
             <ul>
-                <li *ngFor="let resultado of resultados">
+                <li *ngFor="let resultado of subscripcionCajaTexto | async">
                     {{resultado}}</li>
             </ul>
         </div>
@@ -66,7 +67,8 @@ export class EjemploObservablesWikipeiaComponennt implements OnDestroy{
         = new Subject(); 
 
     resultados: string[];
-    subscripcionCajaTexto:Subscription;
+    // subscripcionCajaTexto:Subscription; ASYNC
+    subscripcionCajaTexto:any;
 
 //injectamos jsonp
     constructor(private _jsonp: Jsonp){
@@ -82,9 +84,10 @@ export class EjemploObservablesWikipeiaComponennt implements OnDestroy{
             //     console.log('emite dato', dato);
             // })
             //para desuscribirte hayq ue guardar el subscribe
-            .subscribe(resultados =>{
-                this.resultados = resultados;
-            });
+            //para el cambio ASYNC
+            // .subscribe(resultados =>{
+            //     this.resultados = resultados;
+            // });
     }
 
     buscarWikipedia(evento:KeyboardEvent){

@@ -64,10 +64,15 @@ var EjemploObservablesWikipeiaComponennt = (function () {
                 .switchMap(function (palabra) {
                 console.log('voy a buscar: ', palabra);
                 return _this.peticionBusqueda(palabra);
-            })
-                .subscribe(function (resultados) {
-                _this.resultados = resultados;
             });
+        // .subscribe(dato =>{
+        //     console.log('emite dato', dato);
+        // })
+        //para desuscribirte hayq ue guardar el subscribe
+        //para el cambio ASYNC
+        // .subscribe(resultados =>{
+        //     this.resultados = resultados;
+        // });
     }
     EjemploObservablesWikipeiaComponennt.prototype.buscarWikipedia = function (evento) {
         //hacemos emision de eventos
@@ -101,7 +106,8 @@ var EjemploObservablesWikipeiaComponennt = (function () {
 EjemploObservablesWikipeiaComponennt = __decorate([
     core_1.Component({
         selector: 'ejemplos-observables-wikipedia',
-        template: "\n        <div>\n        <input (input)=\"buscarWikipedia($event)\"/>\n            <ul>\n                <li *ngFor=\"let resultado of resultados\">\n                    {{resultado}}</li>\n            </ul>\n        </div>\n        "
+        //<li *ngFor="let resultado of resultados ">
+        template: "\n        <div>\n        <input (input)=\"buscarWikipedia($event)\"/>\n            <ul>\n                <li *ngFor=\"let resultado of subscripcionCajaTexto | async\">\n                    {{resultado}}</li>\n            </ul>\n        </div>\n        "
     }),
     __metadata("design:paramtypes", [http_1.Jsonp])
 ], EjemploObservablesWikipeiaComponennt);
