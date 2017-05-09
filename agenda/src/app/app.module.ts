@@ -1,7 +1,7 @@
 import { NgModule }      from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
-import { HttpModule } from '@angular/http';
+import { HttpModule, JsonpModule } from '@angular/http';
 
 import { AppComponent }  from './app.component';
 import {CajaComponent } from './ejemplos/caja.component';
@@ -17,6 +17,7 @@ import { MisContactosComponent } from './mis-contactos/mis-contactos.component';
 import { NuevoContactoComponent } from './nuevo-contacto/nuevo-contacto.component';
 import { ContactosResolve } from './servicios/contactos-resolve.service';
 import { ProveedorDirecciones } from './configuracion/direcciones';
+import { observablesEjemplosComponent, EjemploObservablesWikipeiaComponennt } from './ejemplos/observables-ejemplos.component';
 
 
 interface Coche {
@@ -28,7 +29,8 @@ interface Coche {
     BrowserModule,
     FormsModule,
     HttpModule,
-    AppRoutingModule
+    AppRoutingModule,
+    JsonpModule
     ], 
   declarations: [  //toos los componentes, directivas y pipes  que necesita
     AppComponent,
@@ -40,7 +42,9 @@ interface Coche {
     EjemplosInyeccionComponent,
     FormularioContactComponent,
     MisContactosComponent,
-    NuevoContactoComponent
+    NuevoContactoComponent,
+    observablesEjemplosComponent,
+    EjemploObservablesWikipeiaComponennt
      ],
   providers: [ // metemos los servicios
     ContactoService,
