@@ -20,6 +20,8 @@ import { ProveedorDirecciones } from './configuracion/direcciones';
 import { observablesEjemplosComponent, EjemploObservablesWikipeiaComponennt } from './ejemplos/observables-ejemplos.component';
 import { EjemplosPipeComponent } from './ejemplos/ejemplos-pipe.component';
 import { OrdenarPipe } from './pipes/ordenar.pipe';
+import { EjemploDirectivasComponent } from './ejemplos/ejemplo-directivas.component';
+import { EjemplosDirectivasAtributoDirective } from './ejemplos/ejemplos-directivas.directive';
 
 
 interface Coche {
@@ -48,7 +50,9 @@ interface Coche {
     observablesEjemplosComponent,
     EjemploObservablesWikipeiaComponennt,
     EjemplosPipeComponent,
-    OrdenarPipe
+    OrdenarPipe,
+    EjemploDirectivasComponent,
+    EjemplosDirectivasAtributoDirective
      ],
   providers: [ // metemos los servicios
     ContactoService,

@@ -1,15 +1,6 @@
 {
   "contactos": [
     {
-      "nombre": "Javier",
-      "apellidos": "Lopex",
-      "email": "",
-      "telefono": "",
-      "twitter": "",
-      "facebook": "",
-      "id": 1
-    },
-    {
       "nombre": "Dany",
       "apellidos": "Targaryen",
       "email": "ejeplo@drag.es",
@@ -17,24 +8,6 @@
       "twitter": "emiliaclarke",
       "facebook": "EmiliaTargaryenClarke",
       "id": 2
-    },
-    {
-      "nombre": "Jon",
-      "apellidos": "Nieve",
-      "email": "",
-      "telefono": "",
-      "twitter": "",
-      "facebook": "",
-      "id": 3
-    },
-    {
-      "nombre": "Zion",
-      "apellidos": "Greyjoy",
-      "email": "zyongrey@islas.ih",
-      "telefono": "532532",
-      "twitter": "@zyon",
-      "facebook": "zyongreyjoy",
-      "id": 4
     },
     {
       "nombre": "Javier",
@@ -45,6 +18,16 @@
       "facebook": "JavierLopez",
       "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/trubeatto/128.jpg\n",
       "id": 5
+    },
+    {
+      "nombre": "paca",
+      "apellidos": "la paca",
+      "email": "alpaca@fasfa",
+      "telefono": "598578",
+      "twitter": "@lapaca",
+      "facebook": "alpaca",
+      "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/millinet/128.jpg\n",
+      "id": 7
     }
   ]
 }

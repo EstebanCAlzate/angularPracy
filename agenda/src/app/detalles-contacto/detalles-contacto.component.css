@@ -1,14 +1,16 @@
-button{
+.botonRed{
     font-size: 32px;
     padding: 25px;
     margin: 0;
     border: 0;
 }
 
-button:hover{
+.botonRed:hover{
     color: purple;
 }
-
+.eliminar:hover{
+    color: purple;
+}
 div {
     text-align: center;
 }

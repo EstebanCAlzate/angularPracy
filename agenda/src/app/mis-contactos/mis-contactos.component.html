@@ -8,7 +8,8 @@
     <div class="six columns">
         <detalles-contacto [contacto]="contactoSeleccionado" 
                             (verFb)="navegarRuta($event)"
-                            (verTw)="navegarRuta($event)">
+                            (verTw)="navegarRuta($event)"
+                            (eliminar)="eliminarContacto($event)">
         </detalles-contacto>
 
     </div>

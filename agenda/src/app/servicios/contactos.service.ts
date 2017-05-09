@@ -36,17 +36,18 @@ export class ContactoService {
     }
 
     //eliminamos un contacto del servidor
-    eliminarContacto(contacto: Contacto): Observable<Contacto> {
+    // eliminarContacto(contacto: Contacto): Observable<Contacto> { cambio en el eliminar
+    eliminarContacto(contacto: Contacto): Observable<any> {
         return this._http
-            .delete(`${this._direcciones.servidor}/contactos/contactos/${contacto.id}`)
-            .map(res => Contacto.desdeJSON(res.json()));
+            .delete(`${this._direcciones.servidor}/contactos/${contacto.id}`)
+            // .map(res => Contacto.desdeJSON(res.json()));
             //lo que responda el servidor lo convertimos en tipo contacto
     }
 
     //actualizamos un contacto en el servidor
     editarContacto(contacto: Contacto): Observable<Contacto>{
         return this._http
-            .put(`${this._direcciones.servidor}/contactos/contactos/${contacto.id}`, contacto)
+            .put(`${this._direcciones.servidor}/contactos/${contacto.id}`, contacto)
             .map(res => Contacto.desdeJSON(res.json()));
     }
 

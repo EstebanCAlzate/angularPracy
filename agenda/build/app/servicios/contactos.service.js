@@ -43,16 +43,17 @@ var ContactoService = (function () {
             .map(function (res) { return contacto_1.Contacto.desdeJSON(res.json()); });
     };
     //eliminamos un contacto del servidor
+    // eliminarContacto(contacto: Contacto): Observable<Contacto> { cambio en el eliminar
     ContactoService.prototype.eliminarContacto = function (contacto) {
         return this._http
-            .delete(this._direcciones.servidor + "/contactos/contactos/" + contacto.id)
-            .map(function (res) { return contacto_1.Contacto.desdeJSON(res.json()); });
+            .delete(this._direcciones.servidor + "/contactos/" + contacto.id);
+        // .map(res => Contacto.desdeJSON(res.json()));
         //lo que responda el servidor lo convertimos en tipo contacto
     };
     //actualizamos un contacto en el servidor
     ContactoService.prototype.editarContacto = function (contacto) {
         return this._http
-            .put(this._direcciones.servidor + "/contactos/contactos/" + contacto.id, contacto)
+            .put(this._direcciones.servidor + "/contactos/" + contacto.id, contacto)
             .map(function (res) { return contacto_1.Contacto.desdeJSON(res.json()); });
     };
     ContactoService.prototype.generarRutaAvatar = function () {

@@ -6,15 +6,18 @@
     <!--nombr del contacto-->
     <h5>{{ contacto?.nombre }} {{contacto?.apellidos}}</h5>
     <!-- redes sociales-->
-    <button type="button" (click)="notificarFb()">
+    <button class="botonRed" type="button" (click)="notificarFb()">
         <i class="fa fa-facebook" aria-hidden="true"></i>
     </button>
-    <button type="button" (click)="notificarTw()">
+    <button class="botonRed"  type="button" (click)="notificarTw()">
         <i class="fa fa-twitter" aria-hidden="true"></i>
     </button>
     <!--nombr del email -->
     <h5>{{ contacto?.email }}</h5>
     <!--nombr del telefono -->
     <h5>{{ contacto?.telefono }}</h5>
+
+    <!--Ponemos un boton para eliminar contacto-->
+    <button class="u-full-width eliminar" type="button" (click)='notificarEliminacion()'>eliminar</button>
 
 </div>

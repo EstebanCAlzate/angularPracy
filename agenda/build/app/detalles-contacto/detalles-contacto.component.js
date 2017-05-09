@@ -14,12 +14,16 @@ var DetallesContactoComponent = (function () {
     function DetallesContactoComponent() {
         this.verFb = new core_1.EventEmitter();
         this.verTw = new core_1.EventEmitter();
+        this.eliminar = new core_1.EventEmitter();
     }
     DetallesContactoComponent.prototype.notificarFb = function () {
         this.verFb.emit(this.contacto.generarRutaFb());
     };
     DetallesContactoComponent.prototype.notificarTw = function () {
         this.verTw.emit(this.contacto.generarRutaTw());
+    };
+    DetallesContactoComponent.prototype.notificarEliminacion = function () {
+        this.eliminar.emit(this.contacto);
     };
     return DetallesContactoComponent;
 }());
@@ -35,6 +39,10 @@ __decorate([
     core_1.Output(),
     __metadata("design:type", core_1.EventEmitter)
 ], DetallesContactoComponent.prototype, "verTw", void 0);
+__decorate([
+    core_1.Output(),
+    __metadata("design:type", core_1.EventEmitter)
+], DetallesContactoComponent.prototype, "eliminar", void 0);
 DetallesContactoComponent = __decorate([
     core_1.Component({
         selector: 'detalles-contacto',

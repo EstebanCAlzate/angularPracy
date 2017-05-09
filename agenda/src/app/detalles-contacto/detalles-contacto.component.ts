@@ -13,11 +13,16 @@ export class DetallesContactoComponent {
     
     @Output() verFb:EventEmitter<string> = new EventEmitter();
     @Output() verTw:EventEmitter<string> = new EventEmitter();
+    @Output() eliminar:EventEmitter<Contacto> = new EventEmitter();
+    
 
     notificarFb(){
         this.verFb.emit(this.contacto.generarRutaFb());
     }
     notificarTw(){
         this.verTw.emit(this.contacto.generarRutaTw());
+    }
+    notificarEliminacion(){
+        this.eliminar.emit(this.contacto);
     }
 }
